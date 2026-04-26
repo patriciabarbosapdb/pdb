@@ -1,0 +1,408 @@
+:root {
+    --pink-bg: #F8EFB1;
+    --dark-green: #E66F36;
+    --dark-red: #E66F36;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--pink-bg);
+    color: var(--dark-red);
+}
+
+header {
+    background: var(--pink-bg);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--dark-red);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.hero-green {
+    background-color: var(--dark-green);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.lace-circle {
+    border: 3px dashed var(--white);
+    border-radius: 50%;
+    padding: 60px;
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.about-section {
+    display: flex;
+    padding: 80px 10%;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border: 10px solid var(--white);
+}
+
+.badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--dark-red);
+    color: white;
+    padding: 20px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    transform: rotate(-15deg);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 span {
+    font-family: 'Playfair Display', serif;
+    display: block;
+    font-size: 3rem;
+}
+
+.values-grid {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background: var(--white);
+    margin: 50px 10%;
+    border-radius: 20px;
+    border: 2px solid var(--dark-red);
+}
+
+.value-item {
+    text-align: center;
+    max-width: 200px;
+}
+
+.value-item i {
+    font-size: 3rem;
+}
+
+/* Links do Menu */
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--dark-green);
+}
+
+/* Portfolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 60px 10%;
+}
+
+.project-card {
+    text-align: center;
+    border: 1px solid var(--pink-bg);
+    padding: 20px;
+    background: white;
+}
+
+.project-image img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* Contato */
+.contact-section {
+    padding: 80px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-card {
+    background: white;
+    padding: 50px;
+    border: 2px solid var(--dark-red);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    border: 1px solid var(--pink-bg);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form button {
+    background: var(--dark-green);
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Container da Linha do Tempo Estilo Mural */
+.timeline-container {
+    background-color: var(--dark-red); /* O fundo bordô da sua paleta original */
+    padding: 80px 10%;
+    overflow: hidden; /* Evita rolagem horizontal das fotos tortas */
+}
+
+/* Grelha de fotos espalhadas */
+.mural-timeline {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 100px 40px; /* Aumentei o espaço entre linhas para 100px */
+    margin-top: 60px;
+    position: relative;
+    align-items: start;
+}
+
+/* O "Item" completo (foto + legenda) */
+.mural-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, z-index 0s;
+    position: relative;
+    z-index: 1; /* Garante que estejam na mesma camada */
+}
+
+/* O efeito de "Trazer para frente" no hover */
+.mural-item:hover {
+    transform: scale(1.05) rotate(0deg) !important; /* Levanta e desentorta */
+    z-index: 10; /* Fica acima das outras fotos */
+}
+
+/* O Cartão de Foto (A borda branca) */
+.photo-card {
+    background: var(--white);
+    padding: 15px; /* Borda grossa da referência */
+    border-radius: 2px;
+    box-shadow: 5px 10px 30px rgba(0,0,0,0.3); /* Sombra pesada e difusa */
+    margin-bottom: 25px;
+}
+
+.photo-card img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* O Mês (Caligrafia Itálica) */
+.mural-month {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; /* O segredo da caligrafia */
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* A Legenda (Fonte Simples) */
+.mural-caption {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--pink-bg);
+    opacity: 0.8;
+    margin: 10px 0 0;
+    max-width: 250px;
+}
+
+/* --- INCLINAÇÕES ALEATÓRIAS --- */
+/* (Copiando o look torto da imagem de referência) */
+
+.item-janeiro {
+    transform: rotate(-3deg);
+}
+
+.item-fevereiro {
+    transform: rotate(2deg) translateY(20px); /* Ligeiramente para baixo */
+}
+
+.item-marco {
+    transform: rotate(-5deg);
+}
+
+.item-abril {
+    transform: rotate(4deg);
+}
+
+/* Estilo dos Botões de Filtro */
+.portfolio-filters {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background: none;
+    border: 2px solid var(--pink-bg);
+    color: var(--pink-bg);
+    padding: 10px 25px;
+    margin: 5px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--pink-bg);
+    color: var(--dark-red);
+}
+
+/* Lógica de Esconder/Mostrar Itens */
+.mural-item {
+    display: none; /* Esconde por padrão */
+}
+
+.mural-item.show {
+    display: flex; /* Mostra apenas os que têm a classe .show */
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Espaçamento para a seção de links */
+.contact-links-mural {
+    background-color: var(--dark-red); /* Fundo bordô para destacar os cartões brancos */
+    padding: 60px 10% 100px 10%;
+    margin-top: -20px; /* Sobrepõe levemente a seção anterior para fluidez */
+}
+
+/* Estilo do emoji/ícone dentro do cartão */
+.contact-emoji {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilo do link clicável dentro do cartão */
+.contact-link-text {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-red);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 10px;
+    border-bottom: 1px solid var(--dark-red);
+    transition: 0.3s;
+}
+
+.contact-link-text:hover {
+    color: var(--dark-green);
+    border-bottom-color: var(--dark-green);
+}
+
+/* Garante que os cards de contato não fiquem gigantes */
+.contact-links-mural .photo-card {
+    min-width: 200px;
+    text-align: center;
+}
+
+.resume-section {
+    background-color: var(--pink-bg); /* O teu creme #F8EFB1 */
+    padding: 80px 10%;
+    color: var(--dark-green); /* Verde para o texto base */
+}
+
+.resume-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.resume-column {
+    flex: 1;
+}
+
+.section-title {
+    color: #E66F36; /* O teu Laranja Terracota */
+    font-family: 'Playfair Display', serif; /* Ou a fonte que usas nos títulos */
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #E66F36;
+    display: inline-block;
+}
+
+.resume-item {
+    margin-bottom: 25px;
+}
+
+.year {
+    display: block;
+    font-weight: bold;
+    color: #E66F36;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.resume-item h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(81, 102, 8, 0.2); /* Linha subtil em verde */
+    font-weight: 500;
+}
+
+/* Responsividade para telemóvel */
+@media (max-width: 768px) {
+    .resume-container {
+        flex-direction: column;
+    }
+}
