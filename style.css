@@ -219,15 +219,18 @@ nav ul li a:hover {
     padding: 80px 10%;
     display: flex;
     justify-content: center;
+    
 }
 
 .contact-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.253);
     padding: 50px;
     border: 2px solid var(--dark-red);
+    border-radius: 10px;
     width: 100%;
     max-width: 600px;
     text-align: center;
+
 }
 
 .contact-form {
@@ -235,22 +238,27 @@ nav ul li a:hover {
     flex-direction: column;
     gap: 15px;
     margin-top: 30px;
+    border-radius: 5px;
+    
 }
 
 .contact-form input, .contact-form textarea {
     padding: 15px;
     border: 1px solid var(--pink-bg);
+    border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
+    background: rgba(255, 255, 255, 0.766);
 }
 
 .contact-form button {
     background: var(--dark-green);
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 15px;
     border: none;
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
+     border-radius: 5px;
 }
 
 /* Container da Linha do Tempo Estilo Mural */
@@ -535,4 +543,41 @@ nav ul li a:hover {
     height: auto;
     display: block;
     object-fit: cover; /* Garante que a imagem preenche o espaço sem deformar */
+}
+
+.contact-section {
+    position: relative; /* Essencial para os stickers não fugirem */
+}
+
+.sticker-decor {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none; /* Não atrapalha o clique no formulário */
+    
+    /* Efeito de adesivo real: borda branca + sombra leve */
+    filter: drop-shadow(0 0 1px #fff) 
+            drop-shadow(0 0 2px #fff) 
+            drop-shadow(3px 5px 10px rgba(0,0,0,0.1));
+    
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Posicionamento estratégico baseado no seu print */
+.s-top {
+    width: 120px;
+    top: 5%;
+    right: 15%;
+    transform: rotate(15deg);
+}
+
+.s-bottom {
+    width: 90px;
+    bottom: 10%;
+    left: 30%;
+    transform: rotate(-10deg);
+}
+
+/* Interação: quando passar o mouse perto ou no card, eles reagem */
+.contact-section:hover .sticker-decor {
+    transform: scale(1.1) rotate(0deg);
 }

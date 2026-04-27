@@ -50,3 +50,34 @@ toggleSwitch.addEventListener('change', function(e) {
     }    
 });
 
+// Adicione a classe "drag" nos seus stickers se quiser esse efeito
+const stickers = document.querySelectorAll('.sticker-decor');
+
+stickers.forEach(sticker => {
+    sticker.style.cursor = 'grab';
+    sticker.style.pointerEvents = 'auto'; // Ativa o clique
+
+    let isDragging = false;
+
+    sticker.onmousedown = (e) => {
+        isDragging = true;
+        sticker.style.cursor = 'grabbing';
+        
+        let shiftX = e.clientX - sticker.getBoundingClientRect().left;
+        let shiftY = e.clientY - sticker.getBoundingClientRect().top;
+
+        document.onmousemove = (e) => {
+            if (!isDragging) return;
+            sticker.style.left = e.pageX - shiftX + 'px';
+            sticker.style.top = e.pageY - shiftY + 'px';
+        };
+
+        document.onmouseup = () => {
+            isDragging = false;
+            sticker.style.cursor = 'grab';
+            document.onmousemove = null;
+        };
+    };
+    
+    sticker.ondragstart = () => false; // Previne comportamento padrão do browser
+});
