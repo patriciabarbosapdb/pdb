@@ -5,6 +5,78 @@
     --white: #ffffff;
 }
 
+/* Cores do Modo Escuro (Ajuste conforme seu gosto) */
+[data-theme="dark"] {
+    --pink-bg: #1a1b26;      /* Fundo escuro */
+    --dark-green: #e66f36;   /* Mantive o laranja para destaque */
+    --dark-red: #f8efb1;     /* Texto agora usa o tom creme */
+    --white: #24283b;        /* Cards escuros */
+}
+
+/* Container do Switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+#theme-toggle { display: none; }
+
+.theme-switch {
+    cursor: pointer;
+    width: 60px; /* Reduzi o tamanho para caber no menu */
+    height: 30px;
+    background: linear-gradient(#ffaa2b, #ff7b00); /* Dia */
+    border-radius: 50px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+    transition: 0.5s;
+}
+
+/* O Sol / Lua */
+.sun-moon {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background: #fff5e6;
+    border-radius: 50%;
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 2;
+}
+
+/* Estado Ativo (Noite) */
+#theme-toggle:checked + .theme-switch {
+    background: linear-gradient(#202040, #16213e);
+}
+
+#theme-toggle:checked + .theme-switch .sun-moon {
+    left: calc(100% - 27px);
+    background: #f0f0f0;
+    box-shadow: inset -3px -2px 0 0 #a9a9a9; /* Cratera da lua */
+}
+
+/* Nuvens e Estrelas simples */
+.clouds span, .stars span {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.clouds span { width: 10px; height: 3px; top: 10px; right: 8px; opacity: 0.8; }
+.stars span { width: 2px; height: 2px; top: 8px; left: 15px; opacity: 0; }
+
+#theme-toggle:checked + .theme-switch .stars span { opacity: 1; }
+#theme-toggle:checked + .theme-switch .clouds { transform: translateY(40px); }
+
+/* Suavidade geral no site */
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
