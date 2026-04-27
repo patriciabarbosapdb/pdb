@@ -7,10 +7,10 @@
 
 /* Cores do Modo Escuro (Ajuste conforme seu gosto) */
 [data-theme="dark"] {
-    --pink-bg: #7B190D;     
-    --dark-green: #e66f36;   
-    --dark-red: #e66f36;     
-    --white: #10151B;      
+    --pink-bg: #d3d3d3;     
+    --dark-green: #434343;   
+    --dark-red: #434343;     
+    --white: #10151B;
 }
 
 /* Container do Switch */
@@ -446,11 +446,11 @@ nav ul li a:hover {
 }
 
 .section-title {
-    color: #E66F36; /* O teu Laranja Terracota */
+    color: var(--dark-orange); /* O teu Laranja Terracota */
     font-family: 'Playfair Display', serif; /* Ou a fonte que usas nos títulos */
     font-size: 2rem;
     margin-bottom: 30px;
-    border-bottom: 2px solid #E66F36;
+    border-bottom: 2px solid var(--dark-orange);
     display: inline-block;
 }
 
@@ -461,7 +461,7 @@ nav ul li a:hover {
 .year {
     display: block;
     font-weight: bold;
-    color: #E66F36;
+    color: var(--dark-orange);
     font-size: 0.9rem;
     margin-bottom: 5px;
 }
@@ -580,4 +580,30 @@ nav ul li a:hover {
 /* Interação: quando passar o mouse perto ou no card, eles reagem */
 .contact-section:hover .sticker-decor {
     transform: scale(1.1) rotate(0deg);
+}
+
+/* Por padrão, esconde o vídeo do modo escuro */
+.video-dark {
+    display: none;
+}
+
+/* Quando o tema for escuro: */
+[data-theme="dark"] .video-light {
+    display: none; /* Esconde o claro */
+}
+
+[data-theme="dark"] .video-dark {
+    display: block; /* Mostra o escuro */
+}
+
+/* Mantém as propriedades que você já tinha no seu bg-video */
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }

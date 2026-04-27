@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrícia Barbosa</title>
+    <head>
+    <script>
+        // Executa imediatamente para evitar o "flash" branco
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</head>
     <link rel="icon" type="image/png" href="fotos/logo.svg">
     <link rel="apple-touch-icon" href="fotos/logo.svg">
     <link rel="stylesheet" href="style.css">
@@ -81,10 +90,16 @@
 </section>
 
     <section class="hero-video">
-    <video autoplay muted loop playsinline class="bg-video">
-        <source src="videos/1.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos.
+    <video autoplay muted loop playsinline class="bg-video video-light">
+        <source src="videos/2.mp4" type="video/mp4">
     </video>
+
+    <video autoplay muted loop playsinline class="bg-video video-dark">
+        <source src="videos/1.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+        </div>
 </section>
 
     <script src="script.js"></script>
