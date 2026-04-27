@@ -7,10 +7,10 @@
 
 /* Cores do Modo Escuro (Ajuste conforme seu gosto) */
 [data-theme="dark"] {
-    --pink-bg: #1a1b26;      /* Fundo escuro */
-    --dark-green: #e66f36;   /* Mantive o laranja para destaque */
-    --dark-red: #f8efb1;     /* Texto agora usa o tom creme */
-    --white: #24283b;        /* Cards escuros */
+    --pink-bg: #1a1b26;     
+    --dark-green: #e66f36;   
+    --dark-red: #e66f36;     
+    --white: #24283b;      
 }
 
 /* Container do Switch */
@@ -19,7 +19,9 @@
     align-items: center;
 }
 
-#theme-toggle { display: none; }
+#theme-toggle { 
+    display: none;
+}
 
 .theme-switch {
     cursor: pointer;
