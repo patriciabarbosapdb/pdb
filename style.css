@@ -247,7 +247,7 @@ nav ul li a:hover {
     border: 1px solid var(--pink-bg);
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
-    background: rgba(255, 255, 255, 0.766);
+    background: rgba(255, 255, 255, 0.711);
 }
 
 .contact-form button {
