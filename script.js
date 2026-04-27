@@ -50,9 +50,3 @@ toggleSwitch.addEventListener('change', function(e) {
     }    
 });
 
-// Limpa o URL removendo 'index.html' ou a extensão '.html'
-if (window.location.href.endsWith("index.html")) {
-    window.history.replaceState(null, "", window.location.href.replace("index.html", ""));
-} else if (window.location.href.endsWith(".html")) {
-    window.history.replaceState(null, "", window.location.href.replace(".html", ""));
-}
