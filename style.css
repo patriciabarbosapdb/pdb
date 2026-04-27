@@ -515,48 +515,24 @@ nav ul li a:hover {
         background-size: cover;
     }
 }
-
-.journal-container {
-    padding: 40px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .masonry-grid {
-    /* Define o número de colunas conforme o ecrã */
+    display: block; /* Garante que o container se comporta como bloco */
     column-count: 3;
     column-gap: 20px;
+    width: 100%;
 }
 
 .masonry-item {
-    display: inline-block;
+    display: block; /* Alterado de inline-block para block */
     width: 100%;
     margin-bottom: 20px;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+    break-inside: avoid; /* Impede que a foto se parta entre colunas */
+    -webkit-column-break-inside: avoid; /* Versão para Safari/Chrome antigo */
 }
 
 .masonry-item img {
     width: 100%;
-    display: block;
     height: auto;
-    /* Filtro subtil para combinar com o teu estilo */
-    filter: grayscale(0.2) brightness(0.95);
-    transition: all 0.5s ease;
-}
-
-/* Efeito ao passar o rato */
-.masonry-item:hover img {
-    filter: grayscale(0) brightness(1);
-    transform: scale(1.05);
-}
-
-/* Responsividade: menos colunas em tablets e telemóveis */
-@media (max-width: 900px) {
-    .masonry-grid { column-count: 2; }
-}
-
-@media (max-width: 600px) {
-    .masonry-grid { column-count: 1; }
+    display: block;
+    object-fit: cover; /* Garante que a imagem preenche o espaço sem deformar */
 }
